@@ -22,13 +22,13 @@ export class AddTaskComponent implements OnInit {
       return;
     }
 
-    const newTask = () => {
-      text: this.text;
-      day: this.day;
-      reminder: this.reminder;
+    const newTask = {
+      text: this.text,
+      day: this.day,
+      reminder: this.reminder,
     };
 
-    // TODO: emit event
+    this.onAddTask.emit(newTask);
 
     this.text = '';
     this.day = '';
