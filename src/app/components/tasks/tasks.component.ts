@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscriber } from 'rxjs';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../Task';
 
@@ -29,5 +30,11 @@ export class TasksComponent implements OnInit {
   toggleReminder(task: Task) {
     task.reminder = !task.reminder;
     this.taskService.updateTaskReminder(task).subscribe();
+  }
+
+  addTask(task: Task) {
+    console.log(task);
+
+    this.taskService.addTask(task).subscribe((task) => task.push(task));
   }
 }
