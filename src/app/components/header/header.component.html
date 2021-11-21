@@ -6,4 +6,12 @@
     text="{{ showAddTask ? 'Close' : 'Add' }}"
     (btnClick)="toggleAddTask()"
   ></app-button>
+
+  <app-button
+    *ngIf="hasRoute('/dynamic')"
+    color="orange"
+    text="Compose Message"
+    (btnClick)="sendDynamicMessage()"
+  >
+  </app-button>
 </header>
