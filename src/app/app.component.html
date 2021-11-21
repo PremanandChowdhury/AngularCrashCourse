@@ -1,3 +1,63 @@
+<div class="container-full">
+  <h2 style="text-align: center">Demo Functionality</h2>
+  <hr />
+  <div class="upload-btn-wrapper">
+    <button class="btn">Upload a file</button>
+    <input type="file" name="myfile" />
+  </div>
+  <div class="content">
+    <textarea
+      id="headers"
+      cols="45"
+      rows="10"
+      placeholder="Headers of excel file"
+    ></textarea>
+    <textarea
+      id="message"
+      cols="45"
+      rows="10"
+      placeholder="Compose Message"
+    ></textarea>
+  </div>
+
+  <!-- Here we will show the Dynamic table -->
+  <div>
+    <table>
+      <thead>
+        <th>name</th>
+        <th>phone</th>
+        <th>message</th>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td data-label="name">Ram</td>
+          <td data-label="phone">1234567899</td>
+          <td data-label="message">Test Message</td>
+        </tr>
+
+        <tr>
+          <td data-label="name">Shyam</td>
+          <td data-label="phone">1234567899</td>
+          <td data-label="message">Test Message</td>
+        </tr>
+
+        <tr>
+          <td data-label="name">Sita</td>
+          <td data-label="phone">1234567899</td>
+          <td data-label="message">Test Message</td>
+        </tr>
+
+        <tr>
+          <td data-label="name">Hanuman</td>
+          <td data-label="phone">1234567899</td>
+          <td data-label="message">Test Message</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <div class="container">
   <app-header></app-header>
   <router-outlet></router-outlet>

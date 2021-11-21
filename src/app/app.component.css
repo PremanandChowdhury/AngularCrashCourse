@@ -1,0 +1,158 @@
+.container-full {
+  width: 900px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.content {
+  width: 100%;
+  border: 1px solid steelblue;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+textarea {
+  font-size: 14px;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* Table CSS */
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+thead {
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+th {
+  background: #215a8e;
+  color: #fff;
+}
+
+td:nth-child(1) {
+  background: #215a8e;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 1em;
+}
+
+tr,
+td {
+  display: block;
+}
+
+td {
+  position: relative;
+}
+
+td::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  padding-left: 1em;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+tr {
+  margin-bottom: 1.5em;
+  border: 1px solid #ddd;
+  text-align: right;
+}
+
+tr:last-of-type {
+  margin-bottom: 0;
+}
+
+td:nth-child(n + 2):nth-child(odd) {
+  background-color: #ddd;
+}
+
+@media only screen and (min-width: 768px) {
+  table {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  thead {
+    visibility: visible;
+    position: relative;
+  }
+
+  th {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
+
+  tr {
+    display: table-row;
+    border: none;
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: #ddd;
+  }
+
+  td {
+    display: table-cell;
+  }
+
+  td::before {
+    content: none;
+  }
+
+  td:nth-child(1) {
+    background: transparent;
+    color: #444;
+  }
+
+  td:nth-child(n + 2):nth-child(odd) {
+    background-color: transparent;
+  }
+}
