@@ -34,6 +34,8 @@
 }
 
 .content {
+  display: flex;
+  justify-content: space-evenly;
   width: 100%;
   border: 1px solid steelblue;
   padding: 10px 0;
@@ -42,10 +44,32 @@
 }
 
 textarea {
+  width: 60%;
   font-size: 14px;
   padding: 10px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   border-radius: 5px;
+}
+
+.header {
+  border: 1px solid rgb(156, 158, 160);
+  height: 200px;
+  width: 250px;
+  font-size: 14px;
+  padding: 10px;
+  /* margin-right: 10px; */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 5px 0;
+  padding: 10px 0;
+  background-color: #efefef;
 }
 
 /* Table CSS */
@@ -55,6 +79,7 @@ table {
   border-spacing: 0;
   border-radius: 5px;
   overflow: hidden;
+  border: 1px solid steelblue;
 }
 
 thead {

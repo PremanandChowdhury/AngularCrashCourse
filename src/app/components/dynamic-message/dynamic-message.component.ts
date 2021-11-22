@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as xlsx from 'xlsx';
 
 type AOA = any[][];
@@ -9,6 +9,16 @@ type AOA = any[][];
 })
 export class DynamicMessageComponent implements OnInit {
   data: any = [];
+  headers: any = [];
+  tableData: any = [];
+  messageData: any = '';
+  count = 0;
+
+  // @ViewChild('headers') headersElem: ElementRef;
+  // @ViewChild('headers') headersElem: ElementRef;
+
+  @ViewChild('d_message')
+  dMessageElem!: ElementRef;
 
   wopts: xlsx.WritingOptions = {
     bookType: 'xlsx',
@@ -36,8 +46,7 @@ export class DynamicMessageComponent implements OnInit {
       this.data = <AOA>xlsx.utils.sheet_to_json(ws, {
         header: 1,
       });
-
-      console.log(this.data);
+      this.setHeader(this.data);
     };
     reader.readAsBinaryString(target.files[0]);
   }
@@ -45,4 +54,28 @@ export class DynamicMessageComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  setHeader(data: any) {
+    this.headers = data[0];
+    console.log(this.headers);
+  }
+
+  selectHeader(head: any) {
+    console.log(head.value);
+
+    this.dMessageElem.nativeElement.value += '{' + head + '}';
+  }
+
+  showPreview() {
+    this.count += 1;
+
+    console.log(this.dMessageElem);
+
+    if (this.count === 1) {
+      this.data.map((item: any, i: number) => {
+        if (i !== 0) this.tableData.push(item);
+      });
+      console.log(this.headers, this.tableData);
+    }
+  }
 }
